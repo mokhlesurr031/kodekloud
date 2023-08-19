@@ -1,6 +1,6 @@
 ## Linux Commands 
 
-Print on screen => echo Hi 
+Print on screen => ```echo Hi ```
 
 List files and folders => ls 
 
