@@ -212,8 +212,68 @@ RPM - RedHat(Paid), CentOS, RHEL, Fedora
 Package => ```A compressed archieve that contains all the file that are required by a particular software to run. ```
 
 
+Types of package managers => DPKG, APT, APT-GET, RPM, YUM, DNF. 
 
 
+RPM - Red Hat Package Manager. (CentOS, RedHat, Fedora)
+
+
+RPM has 5 basic mode of operations:
+1. Installing. => rpm -ivh telnet.rpm 
+2. Uninstalling. => rpm -e telnet.rpm
+3. Upgrade. => rpm -Uvh telnet.rpm 
+4. Query. => rpm -q telnet.rpm
+5. Verifying. => rpm -Vf <path to file>
+
+
+YUM 
+
+1. Installing => yum install package.rpm 
+2. Repolist => sudo yum repolist 
+
+
+
+DPKG used to 
+1. Install => dpkg -i package.deb 
+2. Uninstall => dpkg -r package.deb 
+3. List => dpkg -l package 
+4. Status => dpkg -s package
+5. Verify => dpkg -p <path to file>
+
+
+## Compress and Archive 
+du - disk usage 
+
+File details => du -sk test.img
+        => du -sh test.img (more human readable format)
+        => ls -lh test.img (more details format)
+
+
+Archieve files 
+        => tar -cf test.tar file1 file2 file3 [3 file combined in test.tar file]
+        => tar -tf test.tar [see files inside the tar]
+        => tar -xf test.tar [extract the tar file]
+        => tar -zcf test.tar file1 file2 file3 [compress the tar to reduce the size]
+
+Compressing files
+
+        Compress Command                                         Uncompress Command
+    => bzip2 test.img                                       => bunzip2 test.img.bz2 
+    => gzip test.img                                        => gunzip test.img.gz 
+    => xz test.img                                          => unxz test.img.xz 
+    => du -sh test.img.xz [see file size]
+
+
+
+
+## Searching for files and directories 
+
+Search file named city.txt => locate city.txt [sudo updatedb if locate command not works]
+Search by find command => find /home/mahin -name city.txt 
+Search by grep command (search character) => grep second test.txt [searches the all maching words second in test.txt file]
+                                            => grep -r "third line" /home/mahin [search for third line string on this directory]
+                                            => grep -i "good" new.txt [searches for word good in all upper and lower case]
+                                            => grep -w "good" new.txt [searches for the specific word]
 
 
 
