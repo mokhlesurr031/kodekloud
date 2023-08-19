@@ -40,12 +40,10 @@ Remove(Delete) file => ```rm new_file.txt```
 
 
 Download files  => 
+
     curl http://www.domain.com/some_file.txt -O 
 
     wget http://www.domain.com/some_file.txt -O some-file.txt 
-
-
-
 
 
 Check OS version => 
