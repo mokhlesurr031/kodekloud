@@ -39,17 +39,19 @@ Move(Rename) file => ```mv new_file.txt sample_file.txt```
 Remove(Delete) file => ```rm new_file.txt``` 
 
 
-Download files  => ```curl http://www.domain.com/some_file.txt -O ```
+Download files  => 
+    curl http://www.domain.com/some_file.txt -O 
 
-                => ```wget http://www.domain.com/some_file.txt -O some-file.txt ```
-
-
-
+    wget http://www.domain.com/some_file.txt -O some-file.txt 
 
 
-Check OS version    => ```ls /etc/*release*``` 
 
-                    => ```cat /etc/*release*```
+
+
+Check OS version => 
+    ls /etc/*release*
+
+    cat /etc/*release*
 
 
 
