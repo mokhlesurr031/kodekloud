@@ -8,6 +8,10 @@ Print without a new trailing line afterwards => ```echo -n Hello```
 1. Internal or Built-in Commands => echo, cd, pwd, set, etc
 2. External Commands => mv, date, uptime, cp, etc. 
 
+
+About commands => whatis command_name (whatis ls, date)
+Options => man date
+
 Create multiple directory => mkdir dir_a, dir_b, dir_c 
 
 
@@ -80,6 +84,140 @@ Check OS version =>
     ls /etc/*release*
 
     cat /etc/*release*
+
+
+
+
+
+Linux Shells => 
+1. Bourne Shell (sh)
+2. C Shell (csh or tcsh)
+3. Korn Shell (ksh)
+4. Z Shell (zsh)
+5. Bourne again Shell (bash) 
+
+
+
+Change the shell => chsh (sudo chsh -s /bin/sh bob - changes bobs shell from bash to bourne shell)
+
+See all environment variables => ```env```
+Set environment variable => ```export var_name=value```
+Add environment variable persistent by add it to profile => echo 'export ENV_NAME=VALUE' >> /home/user-name/.profile 
+Alias => alias env-name=new-name
+
+
+
+
+## Linux Kernel 
+
+Responsible for 4 major tasks: Memory Management, Process Management, Device Drivers, System Calls and Security. 
+
+Display information about kernel => ```uname``` 
+
+Display kernel version => ```uname -r```
+
+
+
+### Memory Management 
+2 Types: 
+1. Kernel Space: Kernel and Device Drivers(Kernel Code, Extentions, Drivers etc)
+2. User Space: Application/Programs (Programming Languages, Docker Containers)
+
+OS Details in User Space=> cat /etc/os-release 
+
+See all disk srivers => lsblk
+
+
+
+
+## Boot Process 
+4 Steps 
+BIOS POST(POST-Power On Self Test) => Boot Loader (GRUB2) => Kernel Initialization => INIT Process (systemd)
+
+Know the INIT Process => sudo ls -l /sbin/init
+
+
+
+
+### RunLevel 
+runlevel 0 -> poweroff.target
+
+runlevel 1 -> rescue.target
+
+runlevel 2 -> multi-user.target
+
+runlevel 3 -> multi-user.target
+
+runlevel 4 -> multi-user.target
+
+runlevel 5 -> graphical.target
+
+runlevel 6 -> reboot.target
+
+Check => ```runlevel```
+
+Check runlevel name => systemctl get-default 
+
+Change runlevel => sudo systemctl set-default multi-user.target (to level 3)
+
+
+
+## File Types
+
+Everything is a file in linux even a directory is a special type of file. 
+
+3 types:
+1. Regular file 
+2. Directory 
+3. Special Files (character, block, links-hard link, soft link; named pipes)
+
+
+Get the file types => file /dir or file filename.ext 
+
+
+File Identifier 
+```ls``` 
+Directory - d 
+Regular file - -
+Character Device - c 
+Link - l 
+Socket File - s 
+Pipe - p 
+Block Device - b 
+
+
+
+## File System Hierarchy 
+
+                         Root 
+
+/bin /boot /dev /etc /home /lib /media /mnt /opt /tmp /usr /var 
+
+Install any third party program - Put them into /opt 
+All external media is mounted in - /media file system 
+External Harddisk like mouse and keyboard and devices - /dev system 
+Configuration file in linux - /etc 
+Shared library to be imported in - /lib 
+Logs - /var 
+
+
+
+
+
+## Linux Package Managers 
+
+DPKG/APT - Ubuntu, Debian 
+RPM - RedHat(Paid), CentOS, RHEL, Fedora 
+
+Package => ```A compressed archieve that contains all the file that are required by a particular software to run. ```
+
+
+
+
+
+
+
+
 
 
 
