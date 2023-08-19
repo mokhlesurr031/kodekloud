@@ -15,10 +15,10 @@ Multiple commands => ```cd new_directory; mkdir www; pwd ```
 
 Make directory hierarchy => 
 
-    ```mkdir /tmp/asia                     |```
+    mkdir /tmp/asia                     |
 
-    ```mkdir /tmp/asia/india               | => mkdir -p /tmp/asia/india/bangalore ```
-    ```mkdir /tmp/asia/india/bangalore     |```
+    mkdir /tmp/asia/india               | => mkdir -p /tmp/asia/india/bangalore 
+    mkdir /tmp/asia/india/bangalore     |
 
 
 Remove directory => ```rm -r /tmp/my_dir ```
