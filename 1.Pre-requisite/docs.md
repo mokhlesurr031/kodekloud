@@ -278,10 +278,52 @@ Search by grep command (search character) => grep second test.txt [searches the 
 
 
 
+## IO Redirection 
+
+1. Standard Input => 
+2. Standard Output => 
+3. Standard Error => 
+
+Redirect standard output to a file => echo $SHELL > shell.txt 
+Append stdout to an existing file => echo "This is another line" >> shell.txt 
+
+To get the error in file use number 2 => cat shell.txt 2> shell2.txt [Here is shell.txt doesn't exist, the generated error message will be written in shell2.txt]
+To append standard error to a file use double forward symbol => cat whatever.txt 2>> shell.txt 
+
+We generally use 2> /dev/null to the standard output as we don't want the output to be generated somewhere else. 
+
+### Command Line Pipe 
+
+Use multiple command with pipe (|) 
+Ex. command | command 
+=> grep hello sample.txt | less 
+
+
+## Assign domain agains an IP address 
+cat >> /etc/hosts 
+ip_address domain_name
+
+or manually update the /etc/hosts file with 
+ip_address domain_name 
 
 
 
+## Vim Editor 
 
+3 modes:
+1. Command Mode 
+2. Insert Mode 
+3. Last Line 
+
+
+Default is command mode. To go to the insert mode, type i (small letter)
+After writing is finished, get back to the command mode, type esc button. 
+To save or exit, go to the last line mode, type : (colon) for that. 
+
+UP -> K
+DOWN -> J 
+LEFT -> H
+RIGHT -> L
 
 
 
