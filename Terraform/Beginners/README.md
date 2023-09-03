@@ -113,7 +113,68 @@ list(number) type:
 type = list(number)
 default = [1,2,3]
 
+Applying variables:
 
+Declarative:
+Example 1: 
+variable "filename" {
+  default = "/home/mahin/kodekloud/Terraform/Beginners/pets1.txt"
+}
+
+Use Variables:
+
+resource "local_file" "rand-pet1" {
+  filename = var.filename
+}
+
+
+Example 2 (no value declaration):
+variable "filename" {
+  type = string
+}
+
+Use variables:
+env -> 
+export TF_VAR_filename = "path/..."
+
+$terraform apply
+
+terminal -> 
+$terraform apply -var "filename=/path/"
+
+file-> (variables.tfvars) 
+filename="/path"
+
+$terraform apply -var-file variables.tfvars
+
+
+Variables precedence:
+1. Env
+2. terraform.tfvars
+3. terraform.auto.tfvars
+4. command line flag -var or -var-file .
+
+
+Resource Attribute:
+
+Using the output of one resource to input of another. I mean the resources are to be interconnected. 
+variable "filename"{
+  default = "/path/file.txt"
+}
+variable ""{
+  
+}
+
+resource "local_file" "pet"{
+  filename = var.filename
+  content = "My favorite pet is ${random_pet.my-pet.id}"
+}
+
+resource "random_pet" "my-pet"{
+  prefix = var.prefix
+  separator = var.separator
+  length = var.length
+}
 
 
 
