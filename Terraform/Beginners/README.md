@@ -162,7 +162,7 @@ variable "filename"{
   default = "/path/file.txt"
 }
 variable ""{
-  
+
 }
 
 resource "local_file" "pet"{
@@ -175,6 +175,31 @@ resource "random_pet" "my-pet"{
   separator = var.separator
   length = var.length
 }
+
+
+## Output Variables 
+
+Output block:
+
+resource "local_file" "rand-pet1" {
+  filename = var.filename
+  content = random_pet.rand-pet2.id
+}
+
+resource "random_pet" "rand-pet2" {
+    prefix = var.prefix
+    separator = var.separator
+    length = var.length
+}
+
+
+output pet-name{
+  value = random_pet.rand-pet2.id
+  description = "Anything"
+}
+
+$ terraform output
+
 
 
 
